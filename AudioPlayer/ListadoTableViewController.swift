@@ -13,7 +13,6 @@ class ListadoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -33,6 +32,15 @@ class ListadoTableViewController: UITableViewController {
         cell.textLabel?.text = "\(indexPath.row + 1). " + self.tema.listadoArtistas[indexPath.row]
         cell.detailTextLabel?.text = self.tema.listadoDeCanciones[indexPath.row]
         cell.imageView?.image = UIImage(named: self.tema.listadoArtistas[indexPath.row])
+        
+        //Cambio de tamaño de las imágenes en el listado.
+        let itemSize: CGSize = CGSize(width: 300, height: 300)
+        UIGraphicsBeginImageContextWithOptions(itemSize, false, UIScreen.mainScreen().scale)
+        let imageRect: CGRect = CGRectMake(0, 10, itemSize.width, itemSize.height)
+        cell.imageView!.image?.drawInRect(imageRect)
+        cell.imageView!.image? = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
         return cell
     }
     
