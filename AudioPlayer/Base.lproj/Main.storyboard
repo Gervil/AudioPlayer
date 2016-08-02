@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eqk-tB-NRJ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lista de Música-->
+        <scene sceneID="4a9-Rj-qGj">
+            <objects>
+                <tableViewController id="2Ow-ty-ik5" customClass="ListadoTableViewController" customModule="AudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="LAw-Wb-sAE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="ENP-GT-7Nt" detailTextLabel="imz-CB-n7w" style="IBUITableViewCellStyleSubtitle" id="uUF-gA-2hn">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uUF-gA-2hn" id="EHs-84-tZ9">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ENP-GT-7Nt">
+                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="imz-CB-n7w">
+                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ih8-9G-ow4"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2Ow-ty-ik5" id="AKu-Xn-YEG"/>
+                            <outlet property="delegate" destination="2Ow-ty-ik5" id="CfC-kZ-Dnf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Lista de Música" id="wye-PM-QaB"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4mT-BL-Utr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-288" y="304"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8rG-oj-Z87">
+            <objects>
+                <navigationController id="Eqk-tB-NRJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SPW-OS-a7x">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2Ow-ty-ik5" kind="relationship" relationship="rootViewController" id="YGf-C1-gR7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gaQ-KZ-sLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1050" y="304"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RBM-y2-TUs">
+                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XSK-yb-L8K">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9k-9x-Vn5">
+                                                <rect key="frame" x="0.0" y="0.0" width="35" height="45"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <state key="normal" title="🔉">
+                                                    <color key="titleColor" red="0.039215686270000001" green="0.37647058820000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="volume:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i5h-cp-wqN"/>
+                                                </connections>
+                                            </button>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.2" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="JJa-OJ-GYM">
+                                                <rect key="frame" x="53" y="0.0" width="454" height="46"/>
+                                                <connections>
+                                                    <action selector="volume:" destination="BYZ-38-t0r" eventType="valueChanged" id="18n-ip-TRE"/>
+                                                </connections>
+                                            </slider>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DB5-Wk-nUu">
+                                                <rect key="frame" x="525" y="0.0" width="35" height="45"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <state key="normal" title="🔊">
+                                                    <color key="titleColor" red="0.039215686270000001" green="0.37647058820000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="volume:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GN5-Dg-Cfg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="ify-cZ-gSu"/>
+                                        </constraints>
+                                    </stackView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Titulo de la cancion" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="80V-oR-UF2">
+                                        <rect key="frame" x="0.0" y="45" width="560" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Heu-s9-Zxs">
+                                        <rect key="frame" x="0.0" y="75" width="560" height="371"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="d62-BF-Qg5">
+                                        <rect key="frame" x="0.0" y="446" width="560" height="90"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xcV-oz-fzH">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="45"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="nNz-8N-64p">
+                                                        <rect key="frame" x="0.0" y="0.0" width="49" height="45"/>
+                                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WS3-vC-it4">
+                                                        <rect key="frame" x="67" y="0.0" width="432" height="46"/>
+                                                        <connections>
+                                                            <action selector="trackSlide:" destination="BYZ-38-t0r" eventType="valueChanged" id="4if-tp-GOJ"/>
+                                                        </connections>
+                                                    </slider>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="n1N-Xx-Vdw">
+                                                        <rect key="frame" x="517" y="0.0" width="43" height="45"/>
+                                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPk-Ov-5n3">
+                                                <rect key="frame" x="0.0" y="45" width="560" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="uRg-6b-Snv"/>
+                                                </constraints>
+                                                <items>
+                                                    <barButtonItem title="↹" id="A8F-jU-5gc">
+                                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <action selector="playAleatorio:" destination="BYZ-38-t0r" id="ez7-MH-1LV"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cN5-7W-Mqm"/>
+                                                    <barButtonItem systemItem="rewind" id="Ai2-tM-ayg">
+                                                        <connections>
+                                                            <action selector="temaAnterior:" destination="BYZ-38-t0r" id="tjg-aC-o1m"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="zic-OE-6pk"/>
+                                                    <barButtonItem systemItem="play" id="r2W-Kw-Mks">
+                                                        <connections>
+                                                            <action selector="playPause:" destination="BYZ-38-t0r" id="iNU-oh-1L1"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="4yL-lq-d2b"/>
+                                                    <barButtonItem systemItem="fastForward" id="Iyr-aj-7v3">
+                                                        <connections>
+                                                            <action selector="temaSiguiente:" destination="BYZ-38-t0r" id="10C-BO-lnq"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2Y9-kf-qo9"/>
+                                                    <barButtonItem systemItem="stop" id="zGQ-kh-Nbi">
+                                                        <connections>
+                                                            <action selector="stop" destination="BYZ-38-t0r" id="XrE-Me-IlM"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                </items>
+                                            </toolbar>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87677468312658613" green="1" blue="0.52468793206157893" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RBM-y2-TUs" secondAttribute="bottom" id="2ZR-DF-0de"/>
+                            <constraint firstItem="RBM-y2-TUs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3rh-FC-fJH"/>
+                            <constraint firstItem="RBM-y2-TUs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ABt-1A-h60"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RBM-y2-TUs" secondAttribute="trailing" id="rkU-S8-0My"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnPlayAleatorio" destination="A8F-jU-5gc" id="cLA-63-yYW"/>
+                        <outlet property="btnStop" destination="zGQ-kh-Nbi" id="mjC-NC-3gE"/>
+                        <outlet property="foto" destination="Heu-s9-Zxs" id="sFX-49-WUr"/>
+                        <outlet property="timeDown" destination="n1N-Xx-Vdw" id="vZx-Rv-hMQ"/>
+                        <outlet property="timeSlide" destination="WS3-vC-it4" id="Cj7-Ad-0tc"/>
+                        <outlet property="timeUp" destination="nNz-8N-64p" id="f91-OL-dtr"/>
+                        <outlet property="tituloDeLaCancion" destination="80V-oR-UF2" id="ToF-1u-Qsy"/>
+                        <outlet property="toolBar" destination="kPk-Ov-5n3" id="ht0-rP-qYn"/>
+                        <outlet property="volumeDown" destination="E9k-9x-Vn5" id="Xf4-mt-guM"/>
+                        <outlet property="volumeSlide" destination="JJa-OJ-GYM" id="31p-T4-1vV"/>
+                        <outlet property="volumeUp" destination="DB5-Wk-nUu" id="dL4-5o-Jwe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="435" y="304"/>
+        </scene>
+    </scenes>
+</document>
